@@ -1,25 +1,43 @@
-import React from "react";
-import logo from "./logo.svg";
+import React, { lazy, Suspense } from "react";
 import "./App.scss";
+import { QueryClientProvider } from "react-query";
+import { queryClient } from "./utils/appSetup";
+import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
+import ErrorBoundary from "./pages/Error/ErrorBoundary";
+import Dashboard from "./pages/Dashboard/Dashboard";
+import Login from "./pages/Login/Login";
+import Users from "./pages/Users/Users";
+import UserDetails from "./pages/UserDetails/UserDetails";
+import ProtectedPage from "./protected/ProtectedPage";
+import SharedLayout from "./protected/SharedLayout";
+import AppSuspenseSpinner from "./components/Loader/AppSuspenseSpinner";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ErrorBoundary>
+      <QueryClientProvider client={queryClient}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/auth/login" element={<Login />} />
+            <Route
+              path="/"
+              element={
+                <ProtectedPage>
+                  <SharedLayout>
+                    <Suspense fallback={<AppSuspenseSpinner />} />
+                    <Outlet />
+                  </SharedLayout>
+                </ProtectedPage>
+              }
+            >
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/users" element={<Users />} />
+              <Route path="/user/details" element={<UserDetails />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </QueryClientProvider>
+    </ErrorBoundary>
   );
 }
 
