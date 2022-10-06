@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import "./TopNavbar.scss";
 import { FaAngleDown, FaSearch } from "react-icons/fa";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
+import { useDispatch } from "react-redux";
+import { toggleSideMenu } from "../../redux/slice";
 import AppLogo from "../Logo/AppLogo";
 import Search from "../Search/Search";
 import Bell from "../../assets/bell.svg";
@@ -10,6 +12,7 @@ import { useState } from "react";
 
 const TopNavbar = () => {
   const [searchOpen, setSearchOpen] = useState(false);
+  const dispatch = useDispatch();
 
   return (
     <div className="top-navbar">
@@ -48,7 +51,10 @@ const TopNavbar = () => {
           </div>
         </div>
 
-        <div className="hamburger-con">
+        <div
+          className="hamburger-con"
+          onClick={() => dispatch(toggleSideMenu())}
+        >
           <HiOutlineMenuAlt3 />
         </div>
       </div>

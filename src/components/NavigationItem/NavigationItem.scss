@@ -8,6 +8,13 @@
     padding: 8px 0 8px $side-nav-item-padding-left;
     border-left: 3px solid transparent;
 
+    & > span {
+        transition: transform .3s ease;
+    }
+
+    &:hover > span {
+        transform: translateX(4px);
+    }
 
     &.active {
         background-color: rgba(57, 205, 204, 0.06);

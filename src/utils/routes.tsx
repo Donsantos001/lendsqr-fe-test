@@ -96,7 +96,7 @@ export const businessesRoutes = [
   },
 ];
 
-const settingsRoutes = [
+export const settingsRoutes = [
   {
     title: "Preferences",
     icon: <FaUser />,

@@ -16,17 +16,16 @@
 
         .app-logo-con {
             width: 283px;
+
+            @include breakpoint(md-only){
+                width: fit-content;
+            }
         }
 
         .top-navbar-main {
             display: flex;
             flex: 1;
             justify-content: space-between;
-
-            @include breakpoint(sm-only){
-                display: none;
-            }
-
             @include breakpoint(lg-only){
                 justify-content: flex-end;
             }
@@ -37,7 +36,7 @@
                     top: $top-nav-height + 10px;
                     left: -50%;
                     transform: translateX(-100%);
-                    transition: all .4s ease-in-out;
+                    transition: left .4s ease-in-out, transform .4s ease-in-out;
                 }
 
                 &.open {
@@ -55,6 +54,7 @@
             align-items: center;
             font-size: 36px;
             display: none;
+            cursor: pointer;
 
             @include breakpoint(sm-only){
                 margin-left: auto;
@@ -71,6 +71,12 @@
 .top-navbar-right {
     display: flex;
     align-items: center;
+
+
+    @include breakpoint(sm-only){
+        display: none;
+    }
+
 
     .docs-link {
         margin-right: 10px;
@@ -104,5 +110,9 @@
         display:flex;
         align-items: center;
         gap: 8px;
+
+        & > span {
+            font-weight: 500;
+        }
     }
 }
