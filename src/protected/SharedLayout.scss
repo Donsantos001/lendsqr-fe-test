@@ -1,0 +1,22 @@
+@import '../variables/variables.scss';
+.wrapper {
+    padding-top: 100px;
+    padding-left: 283px;
+    transition: all .3s ease;
+
+    @include breakpoint(xl-only){
+        padding-left: 0;
+    }
+
+    .main {
+        padding: 60px;
+
+        @include breakpoint(md-only){
+            padding: 30px;
+        }
+
+        @include breakpoint(sm-only){
+            padding: 15px;
+        }
+    }
+}

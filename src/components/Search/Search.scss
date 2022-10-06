@@ -1,0 +1,37 @@
+.search-box {
+    display: flex;
+    border: 1px solid rgba(33, 63, 125, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    height: 40px;
+    width: 400px;
+
+
+    .search-input {
+        flex: 1;
+
+        input {
+            height: 100%;
+            width: 100%;
+            padding-left: 25px;
+            border: none;
+            outline: none;
+            font-family: 'Work Sans', sans-serif;
+        }
+    }
+
+    .search-icon {
+        width: 56px;
+        height: 100%;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        background-color: #39CDCC;
+
+        &:hover {
+            background-color: #0c8d8d;
+        }
+    }
+}

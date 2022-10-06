@@ -1,0 +1,41 @@
+@import '../../variables/variables.scss';
+
+.side-menu {
+    position: fixed;
+    top: $top-nav-height;
+    left: 0;
+    width: $side-menu-width;
+    height: calc(100vh - $top-nav-height);
+    overflow-y: auto;
+    background-color: white;
+    z-index: 99;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
+    transition: left .3s ease;
+
+    @include breakpoint(xl-only){
+        left: -$side-menu-width;
+    }
+
+    &.open {
+        left: 0;
+    }
+
+    .side-menu-inner {
+        padding-top: 30px;
+
+        .switch-org {
+            display: flex;
+            align-items:flex-end;
+            padding-left: $side-nav-item-padding-left;
+            margin: 10px 0 30px 0;
+
+            .shop-icon {
+                margin-right: 10px;
+            }
+        } 
+
+        .side-menu-label {
+            padding-left: $side-nav-item-padding-left;
+        }
+    }
+}

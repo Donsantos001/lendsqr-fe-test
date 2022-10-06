@@ -1,0 +1,52 @@
+//global
+$text-primary: #213F7D;
+$text-secondary: #545F7D;
+
+// sidemenu
+$side-menu-width: 283px;
+$top-nav-height: 100px;
+$side-nav-item-padding-left: 20px;
+
+// breakpoints
+@mixin breakpoint($point) {
+    @if $point == xl {
+        // 1200px
+        @media (min-width: 1200px) {
+            @content;
+        }
+    } @else if $point == xl-only {
+        // 1200px
+        @media (max-width: 1199.9px) {
+            @content;
+        }
+    } @else if $point == lg {
+        // 1024px
+        @media (min-width: 64em) {
+            @content;
+        }
+    } @else if $point == lg-only {
+        // 1024px
+        @media (max-width: 1023.9px) {
+            @content;
+        }
+    } @else if $point == md {
+        // 768px
+        @media (min-width: 48em) {
+            @content;
+        }
+    } @else if $point == md-only {
+        // 767px
+        @media (max-width: 767px) {
+            @content;
+        }
+    } @else if $point == sm {
+        // 600px
+        @media (min-width: 37.5em) {
+            @content;
+        }
+    } @else if $point == sm-only {
+        @media (max-width: 599.9px) {
+            @content;
+        }
+    }
+}

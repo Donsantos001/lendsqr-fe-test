@@ -1,0 +1,108 @@
+@import '../../variables/variables.scss';
+
+.top-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    padding: 30px 20px;
+    background-color: white;
+    z-index: 100;
+    box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
+
+    .top-navbar-inner {
+        display: flex;
+
+        .app-logo-con {
+            width: 283px;
+        }
+
+        .top-navbar-main {
+            display: flex;
+            flex: 1;
+            justify-content: space-between;
+
+            @include breakpoint(sm-only){
+                display: none;
+            }
+
+            @include breakpoint(lg-only){
+                justify-content: flex-end;
+            }
+
+            .search-box {
+                @include breakpoint(lg-only){
+                    position: fixed;
+                    top: $top-nav-height + 10px;
+                    left: -50%;
+                    transform: translateX(-100%);
+                    transition: all .4s ease-in-out;
+                }
+
+                &.open {
+                    @include breakpoint(lg-only){
+                        left: 50%;
+                        transform: translateX(-50%);
+                    }
+                }
+            }
+        }
+
+        .hamburger-con {
+            margin-left: 10px;
+            display: flex;
+            align-items: center;
+            font-size: 36px;
+            display: none;
+
+            @include breakpoint(sm-only){
+                margin-left: auto;
+            }
+
+            @include breakpoint(xl-only){
+                display: block;
+            }
+        }
+    }
+}
+
+
+.top-navbar-right {
+    display: flex;
+    align-items: center;
+
+    .docs-link {
+        margin-right: 10px;
+    }
+
+    .notification-icon {
+        margin: 0 20px;
+        cursor: pointer;
+    }
+
+    .search-icon {
+        display: none;
+        margin-right: 10px;
+        cursor: pointer;
+
+        @include breakpoint(lg-only){
+            display: block;
+        }
+    }
+
+    .user-circle {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 10px;
+    }
+
+    .user-dropdown {
+        cursor: pointer;
+        display:flex;
+        align-items: center;
+        gap: 8px;
+    }
+}
