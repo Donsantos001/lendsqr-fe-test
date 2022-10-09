@@ -1,0 +1,73 @@
+.user-status-tag {
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    & > div {
+        width: fit-content;
+        height: 30px;
+        padding: 5px 15px;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+
+        &.blue {
+            background-color: rgba(84, 95, 125, 0.06);
+            color: #545F7D;
+        }
+    
+        &.yellow {
+            background-color: rgba(233, 178, 0, 0.1);
+            color: #E9B200;
+        }
+    
+        &.red {
+            background-color: rgba(228, 3, 59, 0.1);
+            color: #E4033B;
+        }
+    
+        &.green {
+            background-color: rgba(57, 205, 98, 0.06);
+            color: #39CD62;
+        }
+    }
+}
+
+.user-options-icon {
+    cursor: pointer;
+}
+
+.user-options-con {
+    position: absolute;
+    padding: 20px;
+    right: -10px;
+    top: 40%;
+    transform: translateY(-50%);
+    width: fit-content;
+    height: fit-content;
+    background: #FFFFFF;
+    border: 1px solid rgba(84, 95, 125, 0.04);
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+
+
+    & > div:not(:last-child){
+        margin-bottom: 15px;
+    }
+
+    & > div {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        font-weight: 500;
+
+        & > span {
+            margin-left: 10px;
+        }
+
+        &:hover {
+            color: #5071b1;
+        }
+    }
+}
+

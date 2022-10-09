@@ -1,0 +1,10 @@
+.user-card {
+    background-color: white;
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+    border: 1px solid rgba(33, 63, 125, 0.06);
+
+    .user-card-inner {
+        padding: 15px 30px 5px 30px;
+    }
+}

@@ -23,7 +23,7 @@ export const userSlice = createSlice({
     toggleSideMenu: (state) => {
       state.isSideMenuOpen = !state.isSideMenuOpen;
     },
-    closeSideBar: (state) => {
+    closeSideMenu: (state) => {
       state.isSideMenuOpen = false;
     },
 
@@ -40,11 +40,7 @@ export const userSlice = createSlice({
   },
 });
 
-export const {
-  toggleSideMenu,
-  logOut,
-  logIn,
-  closeSideBar,
-} = userSlice.actions;
+export const { toggleSideMenu, logOut, logIn, closeSideMenu } =
+  userSlice.actions;
 
 export default userSlice.reducer;

@@ -1,6 +1,6 @@
 import "./AppLogo.scss";
-import LendSQR from "../../assets/lendsqr.svg";
-import Union from "../../assets/union.svg";
+import LendSQR from "../../assets/svgs/lendsqr.svg";
+import Union from "../../assets/svgs/union.svg";
 
 const AppLogo = () => {
   return (

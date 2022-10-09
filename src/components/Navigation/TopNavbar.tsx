@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { toggleSideMenu } from "../../redux/slice";
 import AppLogo from "../Logo/AppLogo";
 import Search from "../Search/Search";
-import Bell from "../../assets/bell.svg";
+import Bell from "../../assets/svgs/bell.svg";
 import Profile from "../../assets/profile.jpg";
 import { useState } from "react";
 
@@ -53,9 +53,10 @@ const TopNavbar = () => {
 
         <div
           className="hamburger-con"
+          id="hamburger-con"
           onClick={() => dispatch(toggleSideMenu())}
         >
-          <HiOutlineMenuAlt3 />
+          <HiOutlineMenuAlt3 className="hamburger-icon" />
         </div>
       </div>
     </div>

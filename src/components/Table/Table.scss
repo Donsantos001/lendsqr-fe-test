@@ -1,0 +1,8 @@
+.ag-theme-material {
+    --ag-font-size: 15px;
+    --ag-font-family: 'Work Sans', sans-serif;
+}
+.ag-header-cell-menu-button:not(.ag-header-menu-always-show) {
+    transition: opacity 0.2s;
+    opacity: 0.8;
+}

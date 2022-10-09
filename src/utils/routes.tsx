@@ -112,4 +112,10 @@ export const settingsRoutes = [
     icon: <FaUser />,
     path: "",
   },
+
+  {
+    title: "System Messages",
+    icon: <FaUser />,
+    path: "",
+  },
 ];

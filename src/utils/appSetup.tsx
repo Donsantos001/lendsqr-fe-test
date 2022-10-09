@@ -1,6 +1,5 @@
 import axios from "axios";
 import { QueryClient, QueryKey } from "react-query";
-// import { getUserFromLocalStorage } from "./localStorage";
 
 const URL = process.env.REACT_APP_LENDSQR_CLIENT_URL;
 

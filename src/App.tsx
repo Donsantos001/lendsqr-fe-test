@@ -1,7 +1,7 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useEffect } from "react";
 import "./App.scss";
 import { QueryClientProvider } from "react-query";
-import { queryClient } from "./utils/appSetup";
+import { queryClient, AppSetup } from "./utils/appSetup";
 import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import ErrorBoundary from "./pages/Error/ErrorBoundary";
 import Dashboard from "./pages/Dashboard/Dashboard";
@@ -12,7 +12,11 @@ import ProtectedPage from "./protected/ProtectedPage";
 import SharedLayout from "./protected/SharedLayout";
 import AppSuspenseSpinner from "./components/Loader/AppSuspenseSpinner";
 
-function App() {
+const App = () => {
+  useEffect(() => {
+    AppSetup();
+  }, []);
+
   return (
     <ErrorBoundary>
       <QueryClientProvider client={queryClient}>
@@ -39,6 +43,6 @@ function App() {
       </QueryClientProvider>
     </ErrorBoundary>
   );
-}
+};
 
 export default App;

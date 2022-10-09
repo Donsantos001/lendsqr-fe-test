@@ -1,4 +1,4 @@
-import errorImg from "../../assets/errorWarning.svg";
+import errorImg from "../../assets/svgs/errorWarning.svg";
 
 const Warning = ({ errorInfo }: { errorInfo?: React.ErrorInfo }) => {
   return (

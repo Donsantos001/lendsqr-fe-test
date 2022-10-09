@@ -1,0 +1,44 @@
+.users-custom-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(223, 24, 255, 0.1);
+    border-radius: 50%;
+
+    & > div {
+        width: fit-content;
+
+        .woman {
+            width: 14px;
+            height: 14.5px;
+            transform: translate(2.5px, 1px);
+        }
+
+        .man {
+            width: 11.2px;
+            height: 13.2px;
+            transform: translate(-2.5px, -1px);
+        }
+    }
+}
+
+.three-users-custom-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(87, 24, 255, 0.1);
+    border-radius: 50%;
+
+    & > div {
+        width: fit-content;
+
+        & > img {
+            width: 20px;
+            height: 17.5px;
+        }
+    }
+}
