@@ -1,0 +1,59 @@
+@import '../../variables/variables.scss';
+
+.user-info-section {
+    background-color: #FFFFFF;
+    margin-top: 25px;
+    border: 1px solid rgba(33, 63, 125, 0.06);
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+    padding: 15px 25px;
+
+    & h4 {
+        font-weight: 500;
+    }
+
+    .hr {
+        height: 1px;
+        width: 100%;
+        margin: 10px 0;
+        background-color: rgba(33, 63, 125, 0.1);
+    }
+
+    .content-box {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 26px;
+        
+
+        & > .content-item > h4 {
+            margin: 7px 0;
+        }
+
+        &.wide {
+            grid-template-columns: repeat(4, 1fr);
+            
+            @include breakpoint(lg-only){
+                grid-template-columns: repeat(3, 1fr);
+            }
+        
+            @include breakpoint(md-only){
+                grid-template-columns: repeat(2, 1fr);
+            }
+            @include breakpoint(sm-only){
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+
+        @include breakpoint(lg-only){
+            grid-template-columns: repeat(4, 1fr);
+        }
+    
+        @include breakpoint(md-only){
+            grid-template-columns: repeat(3, 1fr);
+        }
+    
+        @include breakpoint(sm-only){
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}

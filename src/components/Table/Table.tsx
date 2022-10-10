@@ -3,8 +3,12 @@ import { AgGridReact } from "ag-grid-react";
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-material.css";
 import "ag-grid-enterprise";
+import { LicenseManager } from "ag-grid-enterprise";
 import "./Table.scss";
 import { ColDef, ColGroupDef, GridOptions } from "ag-grid-community";
+
+//@ts-ignore
+LicenseManager.prototype.outputMissingLicenseKey = () => {};
 
 type Props = {
   gridRef?: any;
@@ -35,8 +39,8 @@ const Table = ({
       <AgGridReact
         {...props}
         ref={gridRef}
-        headerHeight={50}
-        rowHeight={50}
+        headerHeight={60}
+        rowHeight={61}
         pagination={props.pagination}
         paginationPageSize={props.paginationPageSize}
         onPaginationChanged={props.onPaginationChanged}

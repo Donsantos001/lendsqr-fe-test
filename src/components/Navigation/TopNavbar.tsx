@@ -8,11 +8,15 @@ import AppLogo from "../Logo/AppLogo";
 import Search from "../Search/Search";
 import Bell from "../../assets/svgs/bell.svg";
 import Profile from "../../assets/profile.jpg";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import useClickOutside from "../../hooks/useClickOutside";
 
 const TopNavbar = () => {
+  const optionRef = useRef<any>();
   const [searchOpen, setSearchOpen] = useState(false);
+  const [optionsOpen, setOptionsOpen] = useState(false);
   const dispatch = useDispatch();
+  useClickOutside(optionRef, () => setOptionsOpen(false));
 
   return (
     <div className="top-navbar">
@@ -24,7 +28,10 @@ const TopNavbar = () => {
         <div className="top-navbar-main">
           <Search open={searchOpen} />
 
-          <div className="top-navbar-right">
+          <div
+            className={`top-navbar-right${optionsOpen ? " show" : ""}`}
+            ref={optionRef}
+          >
             <Link to="#" className="docs-link">
               Docs
             </Link>
@@ -49,6 +56,13 @@ const TopNavbar = () => {
               <FaAngleDown />
             </div>
           </div>
+        </div>
+
+        <div
+          className="user-circle mobile"
+          onClick={() => setOptionsOpen(true)}
+        >
+          <img src={Profile} alt="bell" />
         </div>
 
         <div

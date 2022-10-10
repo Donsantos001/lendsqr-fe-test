@@ -1,15 +1,19 @@
 @import '../../variables/variables.scss';
 
-.users-card-section {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 26px;
+.users-main {
+    position: relative;
 
-    @include breakpoint(md-only){
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    @include breakpoint(sm-only){
-        grid-template-columns: repeat(1, 1fr);
+    .users-card-section {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 26px;
+    
+        @include breakpoint(md-only){
+            grid-template-columns: repeat(2, 1fr);
+        }
+    
+        @include breakpoint(sm-only){
+            grid-template-columns: repeat(1, 1fr);
+        }
     }
 }

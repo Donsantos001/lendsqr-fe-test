@@ -7,8 +7,9 @@ import UserOptionsIcon from "./UserOptionsIcon";
 import { formatDate } from "../../utils/formatter";
 import UserOptions from "./OptionsBox";
 import PaginationControls from "../Pagination/PaginationControls";
+import { randomStatus } from "../../utils/status";
 
-const UsersTable = () => {
+const UsersTable = ({ openDetails }: { openDetails: (id: number) => void }) => {
   const gridRef = useRef<any>();
   const [openOptions, setOpenOptions] = useState(false);
   const [clickedId, setClickedId] = useState(0);
@@ -29,8 +30,11 @@ const UsersTable = () => {
       },
     },
     {
-      field: "STATUS",
-      cellRenderer: UserStatus,
+      field: "status",
+      headerName: "STATUS",
+      cellRenderer: ({ data }: any) => {
+        return <UserStatus status={data.status} />;
+      },
       width: 150,
     },
     {
@@ -52,6 +56,14 @@ const UsersTable = () => {
       rows: 0,
     };
   };
+
+  const getWithStatus = useCallback(() => {
+    return data?.map((item: any) => {
+      item.status = randomStatus();
+      return item;
+    });
+  }, [data]);
+
   const [controlInfo, setControlInfo] = useState(paginationInfo());
 
   const onPaginationChanged = () => {
@@ -77,29 +89,34 @@ const UsersTable = () => {
   };
 
   return (
-    <div className="users-table">
-      <Table
-        gridRef={gridRef}
-        rowData={data}
-        columnDefs={columnDefs}
-        context={{
-          tableAction: (data: any) => {
-            setClickedId(data);
-            setOpenOptions(true);
-          },
-        }}
-        pagination={true}
-        paginationPageSize={20}
-        onPaginationChanged={onPaginationChanged}
-      />
-      {clickedId !== 0 && openOptions && (
-        <UserOptions
-          onClickOutside={() => {
-            setOpenOptions(false);
-            setClickedId(0);
+    <React.Fragment>
+      <div className="users-table">
+        <Table
+          gridRef={gridRef}
+          rowData={getWithStatus()}
+          columnDefs={columnDefs}
+          context={{
+            tableAction: (data: any) => {
+              setClickedId(data);
+              setOpenOptions(true);
+            },
           }}
+          pagination={true}
+          paginationPageSize={9}
+          onPaginationChanged={onPaginationChanged}
         />
-      )}
+        {clickedId !== 0 && openOptions && (
+          <UserOptions
+            onClickOutside={() => {
+              setOpenOptions(false);
+              setClickedId(0);
+            }}
+            openDetails={() => {
+              openDetails(clickedId);
+            }}
+          />
+        )}
+      </div>
 
       {gridRef.current && (
         <PaginationControls
@@ -110,7 +127,7 @@ const UsersTable = () => {
           toPage={toPage}
         />
       )}
-    </div>
+    </React.Fragment>
   );
 };
 

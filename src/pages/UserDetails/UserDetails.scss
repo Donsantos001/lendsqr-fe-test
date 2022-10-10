@@ -1,0 +1,167 @@
+@import '../../variables/variables.scss';
+
+.user-details-section {
+
+    .user-details-main {
+        .back-to-users {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+
+            & > span {
+                margin-left: 10px;
+            }
+        }
+
+        .user-details-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            @include breakpoint(md-only){
+                flex-direction: column;
+                align-items: flex-start;
+            }
+    
+    
+            .user-details-status-option {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+    
+                .status-option {
+                    font-weight: 600;
+                    border-radius: 8px;
+                    padding: 12px 16px;
+                    cursor: pointer;
+
+                    &:hover {
+                        opacity: 0.6;
+                    }
+                }
+                & > div {
+                    @include breakpoint(md-only) {
+                        margin-top: 10px;
+                    }
+                }
+    
+                .blacklist-user {
+                    min-width: fit-content;
+                    margin-right: 10px;
+                    color: #E4033B;
+                    border: 1px solid #E4033B;
+                }
+                .activate-user {
+                    min-width: fit-content;
+                    color: #39CDCC;
+                    border: 1px solid #39CDCC;
+                }
+            }
+        }
+    
+        .user-details-overview {
+            margin-top: 15px;
+            padding: 25px 25px 0 25px;
+            background: #FFFFFF;
+            border: 1px solid rgba(33, 63, 125, 0.06);
+            box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+            border-radius: 4px;
+
+            .content {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+
+                @include breakpoint(md-only) {
+                    justify-content: space-between;
+                }
+
+                p, h3 {
+                    margin: 0 0 5px 0;
+                }
+
+                .vr {
+                    height: 100px;
+                    width: 1px;
+                    background: rgba(84, 95, 125, 0.2);
+                }
+
+                & > div {
+                    min-width: fit-content;
+
+                    @include breakpoint(md-only) {
+                        margin-top: 10px;
+                    }
+                }
+
+                & > .vr {
+                    @include breakpoint(md-only) {
+                        display: none;
+                    }
+                }
+
+                .content-profile-id {
+                    display: flex;
+                    align-items: center;
+
+                    .profile-icon {
+                        width: 100px;
+                        height: 100px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 30px;
+                        border-radius: 50%;
+                        background-color: rgba(33, 63, 125, 0.16);
+
+                        @include breakpoint(md-only){
+                            width: 80px;
+                            height: 80px;
+                        }
+                    }
+
+                    .text {
+                        padding: 0 25px;
+                        height: fit-content;
+                    }
+                }
+
+                .user-tier, .bank-info {
+                    padding: 0 25px;
+                    height: fit-content;
+                    @include breakpoint(md-only) {
+                        padding: 0 15px 0 0;
+                    }
+                }
+
+                .user-tier > span {
+                    color: #E9B200;
+
+                    & > svg:not(:last-child) {
+                        margin-right: 5px;
+                    }
+                }
+            }
+
+            .navigation {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 35px;
+                margin-bottom: -2px;
+                flex-wrap: wrap;
+
+                .navigation-item {
+                    min-width: fit-content;
+                    padding: 10px;
+                    cursor: pointer;
+                    border-bottom: 2px solid transparent;
+
+                    &.active {
+                        color: #39CDCC;
+                        border-bottom: 2px solid #39CDCC;
+                    }
+                }
+            }
+        }
+    }
+}
