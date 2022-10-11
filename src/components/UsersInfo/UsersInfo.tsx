@@ -1,4 +1,3 @@
-import React from "react";
 import "./UsersInfo.scss";
 
 const UsersInfo = ({ detail }: { detail: any }) => {

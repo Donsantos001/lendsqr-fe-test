@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { useLocation } from "react-router-dom";
 import { FaShoppingBag, FaAngleDown } from "react-icons/fa";
 import { FiLogOut } from "react-icons/fi";

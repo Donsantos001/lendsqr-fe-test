@@ -1,4 +1,3 @@
-import React from "react";
 import "./UserComponents.scss";
 
 const UserStatus = ({ status }: { status: any }) => {

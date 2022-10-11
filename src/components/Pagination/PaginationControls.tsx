@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import { useCallback } from "react";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import RowCount from "../UsersTable/RowCount";
 import "./PaginationControls.scss";

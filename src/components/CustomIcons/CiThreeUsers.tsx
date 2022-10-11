@@ -1,4 +1,3 @@
-import React from "react";
 import "./CustomIcons.scss";
 import Users from "../../assets/svgs/users.svg";
 

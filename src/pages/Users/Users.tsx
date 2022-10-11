@@ -1,4 +1,3 @@
-import React from "react";
 import UserCard from "../../components/Cards/UserCard";
 import CiUsers from "../../components/CustomIcons/CiUsers";
 import CiThreeUsers from "../../components/CustomIcons/CiThreeUsers";

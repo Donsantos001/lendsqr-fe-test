@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import { useState, useRef } from "react";
 import { FaAngleDown } from "react-icons/fa";
 import useClickOutside from "../../hooks/useClickOutside";
 
