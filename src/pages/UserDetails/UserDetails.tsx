@@ -46,7 +46,7 @@ const UserDetails = () => {
     <div className="unavailable">
       <h3>Data not available, try selecting a user</h3>
     </div>
-  ) : detail ? (
+  ) : (
     <section className="user-details-section">
       {isFetching && (
         <div className="refetching">
@@ -186,8 +186,6 @@ const UserDetails = () => {
         )}
       </div>
     </section>
-  ) : (
-    <AppSuspenseSpinner />
   );
 };
 

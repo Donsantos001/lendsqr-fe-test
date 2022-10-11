@@ -39,37 +39,37 @@ export const customerRoutes = [
   {
     title: "Guarantors",
     icon: <FaUsers />,
-    path: "",
+    path: "#",
   },
   {
     title: "Loans",
     icon: <GiMoneyStack />,
-    path: "",
+    path: "#",
   },
   {
     title: "Decision Models",
     icon: <FaRegHandshake />,
-    path: "",
+    path: "#",
   },
   {
     title: "Savings",
     icon: <FaPiggyBank />,
-    path: "",
+    path: "#",
   },
   {
     title: "Loan requests",
     icon: <FaHandHoldingUsd />,
-    path: "",
+    path: "#",
   },
   {
     title: "Whitelist",
     icon: <FaUserCheck />,
-    path: "",
+    path: "#",
   },
   {
     title: "Karma",
     icon: <FaUserTimes />,
-    path: "",
+    path: "#",
   },
 ];
 
@@ -77,47 +77,47 @@ export const businessesRoutes = [
   {
     title: "Organization",
     icon: <FaShoppingBag />,
-    path: "",
+    path: "#",
   },
   {
     title: "Loan Products",
     icon: <GiReceiveMoney />,
-    path: "",
+    path: "#",
   },
   {
     title: "Savings Products",
     icon: <RiBankLine />,
-    path: "",
+    path: "#",
   },
   {
     title: "Fees and Charges",
     icon: <RiDatabase2Fill />,
-    path: "",
+    path: "#",
   },
   {
     title: "Transactions",
     icon: <GrTransaction />,
-    path: "",
+    path: "#",
   },
   {
     title: "Services",
     icon: <GrServices />,
-    path: "",
+    path: "#",
   },
   {
     title: "Service Account",
     icon: <FaUserCog />,
-    path: "",
+    path: "#",
   },
   {
     title: "Settlements",
     icon: <RiFilePaper2Line />,
-    path: "",
+    path: "#",
   },
   {
     title: "Reports",
     icon: <FaChartBar />,
-    path: "",
+    path: "#",
   },
 ];
 
@@ -125,22 +125,22 @@ export const settingsRoutes = [
   {
     title: "Preferences",
     icon: <BiSlider />,
-    path: "",
+    path: "#",
   },
   {
     title: "Fees and Pricing",
     icon: <RiPercentFill />,
-    path: "",
+    path: "#",
   },
   {
     title: "Audit Logs",
     icon: <AiOutlineAudit />,
-    path: "",
+    path: "#",
   },
 
   {
     title: "System Messages",
     icon: <FiAperture />,
-    path: "",
+    path: "#",
   },
 ];
