@@ -38,6 +38,7 @@ const App = () => {
               }
             >
               {/* A landing page may respond to the index path / */}
+              <Route path="/" element={<Dashboard />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/users" element={<Users />} />
               <Route path="/users/details" element={<UserDetails />} />

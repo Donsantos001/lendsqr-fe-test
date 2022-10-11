@@ -1,46 +1,73 @@
-# Getting Started with Create React App
+# Lendsqr Client Magagement Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a prototype and a submission to `Lendsqr Frontend Engineer Assesment`
 
-## Available Scripts
+## Live Demo
 
-In the project directory, you can run:
+You can preview a live demo of this application at [sanni-habib-lendsqr-fe-test.vercel.app](https://sanni-habib-lendsqr-fe-test.vercel.app)
 
-### `npm start`
+## Technology stacks
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This project was creating using:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- [React](https://github.com/facebook/create-react-app)
+- [Sass](https://sass-lang.com)
+- [Redux](https://redux.js.org/)
+- [AgGrid](https://www.ag-grid.com/)
 
-### `npm test`
+## Overview
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This application UI has been created based on the provided `figma`
+design, responsiveness and functionalities have been provided by developer's descretion. I have also applied some logics for better app optimization and provided suitable messages in error cases.
 
-### `npm run build`
+### Responsiveness
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This application is also as responsive as it should and also provide functionalities for all illustrated ideas in the given design. I have used `mixins` in `Sass` to create templates for my media queries and adopted nested styling in `Sass` to avoid class naming confilcts. All screen sizes have also been taken account of.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Functionality and Optimization
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+I have created this project by writing functional codes using efficient algorithms. I have also adopted some optimization techniques including `useCallback`, `Lazy Loading` or components using `Suspense` and `Fallbacks`, `Caching Techniques` which has improved the app performance for better user experience.
 
-### `npm run eject`
+## Application Pages
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+This mock-up was created having a four pages:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- [Login]() `/auth/login`
+- [Dashboard]() `/dashboard`
+- [Users]() `/users`
+- [User Details]() `/users/details`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Login
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+This mock authentication page allows user to enter their email and password for authorization. The validation provided at the moment is to prevent empty fields, we may update this when the api rules are ready. It also uses a `useEffect` hook to prevent authenticated user from retrying. On successful login, user is navigated to the `intended location` if there is any and its default is to the dashbaord.
 
-## Learn More
+### Dashboard
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This pages contains a section for an overall overview of users data in cards, and also a table section that renders the data of all these users.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Users
+
+This page contains everything just like the dashoard but with an open filter modal which allows user to filter user data by searching with parameter for individual columns.
+The user status was also appended to the response data at random for design representation
+
+### User Details
+
+A page that renders the users full information and allows for account settings management. It uses the `ID` property of the selected user in the user details page to fetch users data.
+I have used `localStorage` to implement caching for this page. Here when the selected user data is present in the `localStorage`, the page is rendered with this data, and then the data is updated afterward in background with a loader to indicate this proccess to the user.
+
+## Component and Features
+
+Here are some of the reusable components features that have been created/modified for this project:
+
+- Table Pagination controls
+- Table Filters
+- Custom Icons
+- Custom Inputs and Selects
+- Spinners and Loaders
+- Overview Cards
+- Status Label
+
+## Probable Future Changes
+
+If there there was room to add to app design, I would have a button on the table components that will optionally toggle the custom filters modal that has been created.
+It there was also a status field associated with the user data received from the `API`, It would have been better and would improve the app performance.
