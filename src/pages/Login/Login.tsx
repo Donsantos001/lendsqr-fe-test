@@ -17,7 +17,7 @@ const Login = () => {
 
   useEffect(() => {
     user && navigate("/dashboard");
-  }, [user]);
+  }, [user, navigate]);
 
   const [userData, setUserData] = useState({
     email: "",

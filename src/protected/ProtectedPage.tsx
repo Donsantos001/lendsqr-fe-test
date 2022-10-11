@@ -9,7 +9,7 @@ const ProtectedPage = ({ children }: { children: JSX.Element }) => {
 
   useEffect(() => {
     !user && navigate("/auth/login", { state: { prev: location.pathname } });
-  }, [user]);
+  }, [user, location.pathname, navigate]);
 
   return children;
 };
