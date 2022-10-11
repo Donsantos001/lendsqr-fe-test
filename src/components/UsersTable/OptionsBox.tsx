@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { TbUserX, TbUserCheck } from "react-icons/tb";
 import useClickOutside from "../../hooks/useClickOutside";

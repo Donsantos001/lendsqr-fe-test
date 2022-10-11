@@ -1,4 +1,3 @@
-import React from "react";
 import "./UserCard.scss";
 import { formatNum } from "../../utils/formatter";
 

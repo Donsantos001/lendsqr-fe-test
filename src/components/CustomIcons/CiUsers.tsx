@@ -1,4 +1,3 @@
-import React from "react";
 import "./CustomIcons.scss";
 import Man from "../../assets/svgs/man.svg";
 import Woman from "../../assets/svgs/woman.svg";

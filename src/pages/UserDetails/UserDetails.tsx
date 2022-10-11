@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { CgArrowLongLeft } from "react-icons/cg";
 import { AiOutlineStar, AiFillStar, AiOutlineUser } from "react-icons/ai";
 import { useNavigate, useLocation } from "react-router-dom";

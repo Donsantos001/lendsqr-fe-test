@@ -1,4 +1,3 @@
-import React from "react";
 import "./AppSuspenseSpinner.scss";
 
 const AppSuspenseSpinner = () => {
