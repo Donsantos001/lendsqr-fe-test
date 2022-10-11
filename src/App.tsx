@@ -3,14 +3,16 @@ import "./App.scss";
 import { QueryClientProvider } from "react-query";
 import { queryClient, AppSetup } from "./utils/appSetup";
 import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
-import ErrorBoundary from "./pages/Error/ErrorBoundary";
-import Dashboard from "./pages/Dashboard/Dashboard";
-import Login from "./pages/Login/Login";
-import Users from "./pages/Users/Users";
-import UserDetails from "./pages/UserDetails/UserDetails";
 import ProtectedPage from "./protected/ProtectedPage";
 import SharedLayout from "./protected/SharedLayout";
 import AppSuspenseSpinner from "./components/Loader/AppSuspenseSpinner";
+
+const ErrorPage = lazy(() => import("./pages/Error/Error"));
+const ErrorBoundary = lazy(() => import("./pages/Error/ErrorBoundary"));
+const Dashboard = lazy(() => import("./pages/Dashboard/Dashboard"));
+const Login = lazy(() => import("./pages/Login/Login"));
+const Users = lazy(() => import("./pages/Users/Users"));
+const UserDetails = lazy(() => import("./pages/UserDetails/UserDetails"));
 
 const App = () => {
   useEffect(() => {
@@ -28,15 +30,18 @@ const App = () => {
               element={
                 <ProtectedPage>
                   <SharedLayout>
-                    <Suspense fallback={<AppSuspenseSpinner />} />
-                    <Outlet />
+                    <Suspense fallback={<AppSuspenseSpinner />}>
+                      <Outlet />
+                    </Suspense>
                   </SharedLayout>
                 </ProtectedPage>
               }
             >
+              {/* A landing page may respond to the index path / */}
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/users" element={<Users />} />
-              <Route path="/user/details" element={<UserDetails />} />
+              <Route path="/users/details" element={<UserDetails />} />
+              <Route path="*" element={<ErrorPage />} />
             </Route>
           </Routes>
         </BrowserRouter>

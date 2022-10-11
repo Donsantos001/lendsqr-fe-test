@@ -1,0 +1,72 @@
+.user-filter-con {
+    position: absolute;
+    top: 60px;
+    left: 15px;
+    width: 270px;
+    background: #FFFFFF;
+    border: 1px solid rgba(84, 95, 125, 0.14);
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+
+    .user-filter {
+        padding: 30px 20px;
+
+        label {
+            font-weight: 500;
+        }
+
+        .filter-input {
+            & > input, & > select {
+                background: rgba(255, 255, 255, 0.2);
+                border: 1px solid rgba(33, 63, 125, 0.2);
+                border-radius: 8px;
+                padding: 10px 20px;
+                width: 100%;
+                height: 40px;
+                margin: 5px 0 15px 0;
+                outline: none;
+
+                &:focus {
+                    border: 1px solid #0e2a63;
+                }
+            }
+
+            & > select {
+                cursor: pointer;
+            }
+        }
+
+        .filter-buttons-con {
+            margin-top: 10px;
+            display: flex;
+
+            & > div {
+                padding: 11px 20px;
+                border-radius: 8px;
+                margin-right: 15px;
+                flex: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+            }
+
+            .reset {
+                border: 1px solid #545F7D;
+
+                &:hover {
+                    background-color: #effcfc;
+                }
+            }
+
+            .filter {
+                background: #39CDCC;
+                border: 1px solid #39CDCC;
+
+                &:hover {
+                    background-color: rgb(26, 155, 155);
+                }
+            }
+        }
+    }
+}

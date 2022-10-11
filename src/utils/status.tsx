@@ -1,4 +1,4 @@
-const statusList = [
+export const statusList = [
   {
     color: "blue",
     text: "Inactive",

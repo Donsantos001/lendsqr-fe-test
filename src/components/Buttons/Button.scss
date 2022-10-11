@@ -1,0 +1,23 @@
+.button-con {
+    background-color: #39CDCC;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 48px;
+    border: none;
+    width: 100%;
+
+    &:hover {
+        background-color: rgb(26, 155, 155);
+    }
+
+    & > span {
+        font-family: 'Avenir Next';
+        font-weight: 600;
+        font-size: 14px;
+        text-transform: uppercase;
+        color: #FFFFFF;
+    }
+}

@@ -5,7 +5,7 @@ import { FiLogOut } from "react-icons/fi";
 import useClickOutside from "../../hooks/useClickOutside";
 import useAppSelector from "../../hooks/useAppSelector";
 import { useDispatch } from "react-redux";
-import { closeSideMenu } from "../../redux/slice";
+import { closeSideMenu, logOut } from "../../redux/slice";
 import "./SideMenu.scss";
 import {
   dashboardRoute,
@@ -22,7 +22,11 @@ const SideMenu = () => {
   const isOpen = useAppSelector(({ user }) => user.isSideMenuOpen);
 
   useClickOutside(sideMenuRef, (e: MouseEvent | TouchEvent) => {
-    if (!e.composedPath().some((elem) => (elem as HTMLDivElement).id === "hamburger-con")) {
+    if (
+      !e
+        .composedPath()
+        .some((elem) => (elem as HTMLDivElement).id === "hamburger-con")
+    ) {
       dispatch(closeSideMenu());
     }
   });
@@ -50,7 +54,7 @@ const SideMenu = () => {
           <NavigationItem
             key={index}
             {...route}
-            active={pathname === route.path}
+            active={pathname.split("/")[1] === route.path.split("/")[1]}
           />
         ))}
 
@@ -59,7 +63,7 @@ const SideMenu = () => {
           <NavigationItem
             key={index}
             {...route}
-            active={pathname === route.path}
+            active={pathname.split("/")[1] === route.path.split("/")[1]}
           />
         ))}
 
@@ -68,11 +72,11 @@ const SideMenu = () => {
           <NavigationItem
             key={index}
             {...route}
-            active={pathname === route.path}
+            active={pathname.split("/")[1] === route.path.split("/")[1]}
           />
         ))}
 
-        <div className="logout">
+        <div className="logout" onClick={() => dispatch(logOut())}>
           <span className="logout-icon">
             <FiLogOut />
           </span>

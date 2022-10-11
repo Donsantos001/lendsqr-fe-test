@@ -3,7 +3,6 @@ import UserCard from "../../components/Cards/UserCard";
 import CiUsers from "../../components/CustomIcons/CiUsers";
 import CiThreeUsers from "../../components/CustomIcons/CiThreeUsers";
 import UsersTable from "../../components/UsersTable/UsersTable";
-import UserDetails from "../UserDetails/UserDetails";
 import "./Users.scss";
 import { useNavigate } from "react-router-dom";
 
@@ -11,7 +10,7 @@ const Users = () => {
   const navigate = useNavigate();
 
   const openDetails = (id: number) => {
-    navigate("/user/details", { state: { id } });
+    navigate("/users/details", { state: { id } });
   };
 
   return (
@@ -30,7 +29,7 @@ const Users = () => {
       </section>
 
       <section className="users-table-section">
-        <UsersTable openDetails={openDetails} />
+        <UsersTable openDetails={openDetails} showFilter={true} />
       </section>
     </div>
   );
