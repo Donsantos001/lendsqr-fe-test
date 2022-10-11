@@ -4,7 +4,6 @@ import { AiOutlineStar, AiFillStar, AiOutlineUser } from "react-icons/ai";
 import { useNavigate, useLocation } from "react-router-dom";
 import { addUserDetails } from "../../redux/slice";
 import UserInfo from "../../components/UsersInfo/UsersInfo";
-import AppSuspenseSpinner from "../../components/Loader/AppSuspenseSpinner";
 import "./UserDetails.scss";
 import { useQuery } from "react-query";
 import useAppSelector from "../../hooks/useAppSelector";
