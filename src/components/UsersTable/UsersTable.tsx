@@ -167,7 +167,6 @@ const UsersTable = ({
     onPaginationChanged();
   };
 
-  console.log(controlInfo);
   return (
     <React.Fragment>
       <div className="users-table">
