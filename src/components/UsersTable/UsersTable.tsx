@@ -91,7 +91,11 @@ const UsersTable = ({
       let valid = true;
       for (const fl of Object.keys(filterData)) {
         if (!fl) continue;
-        if (!(item[fl] as string).includes(filterData[fl] as string)) {
+        if (
+          !(item[fl] as string)
+            .toLowerCase()
+            .includes((filterData[fl] as string).toLowerCase())
+        ) {
           valid = false;
           break;
         }
