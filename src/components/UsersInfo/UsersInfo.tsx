@@ -129,7 +129,7 @@ const UsersInfo = ({ detail }: { detail: any }) => {
       <div className="user-info-con">
         <h4>Guarantor</h4>
 
-        <div className="content-box">
+        <div className="content-box wide">
           <div className="content-item">
             <span>FULL NAME</span>
             <h4>
@@ -159,7 +159,7 @@ const UsersInfo = ({ detail }: { detail: any }) => {
       <div className="user-info-con">
         <h4>Next of Kin</h4>
 
-        <div className="content-box">
+        <div className="content-box wide">
           <div className="content-item">
             <span>FULL NAME</span>
             <h4>Grace Effiom</h4>

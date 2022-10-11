@@ -23,7 +23,19 @@
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         gap: 26px;
-        
+
+        @include breakpoint(lg-only){
+            grid-template-columns: repeat(4, 1fr);
+        }
+    
+        @include breakpoint(md-only){
+            grid-template-columns: repeat(3, 1fr);
+        }
+    
+        @include breakpoint(sm-only){
+            grid-template-columns: repeat(2, 1fr);
+        }
+
 
         & > .content-item > h4 {
             margin: 7px 0;
@@ -42,18 +54,6 @@
             @include breakpoint(sm-only){
                 grid-template-columns: repeat(1, 1fr);
             }
-        }
-
-        @include breakpoint(lg-only){
-            grid-template-columns: repeat(4, 1fr);
-        }
-    
-        @include breakpoint(md-only){
-            grid-template-columns: repeat(3, 1fr);
-        }
-    
-        @include breakpoint(sm-only){
-            grid-template-columns: repeat(2, 1fr);
         }
     }
 }

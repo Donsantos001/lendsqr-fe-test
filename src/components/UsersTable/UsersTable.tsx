@@ -176,7 +176,7 @@ const UsersTable = ({
             },
           }}
           pagination={true}
-          paginationPageSize={9}
+          paginationPageSize={10}
           onPaginationChanged={onPaginationChanged}
         />
 
