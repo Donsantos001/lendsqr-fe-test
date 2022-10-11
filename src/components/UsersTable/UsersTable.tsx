@@ -80,6 +80,7 @@ const UsersTable = ({
   }, [userData]);
 
   const getFilteredData = useCallback(() => {
+    if (!userData) return userData;
     if (Object.values(filterDetails).every((item) => item === "")) {
       return userData;
     }

@@ -1,7 +1,32 @@
-import { FaUser } from "react-icons/fa";
+import {
+  FaUser,
+  FaUsers,
+  FaRegHandshake,
+  FaPiggyBank,
+  FaHandHoldingUsd,
+  FaUserTimes,
+  FaUserCheck,
+  FaUserCog,
+  FaChartBar,
+  FaShoppingBag,
+} from "react-icons/fa";
+import { GiMoneyStack } from "react-icons/gi";
+import { FiAperture } from "react-icons/fi";
+import {
+  RiBankLine,
+  RiDatabase2Fill,
+  RiFilePaper2Line,
+  RiPercentFill,
+} from "react-icons/ri";
+import { GiReceiveMoney } from "react-icons/gi";
+import { BiSlider } from "react-icons/bi";
+import { IoHomeOutline } from "react-icons/io5";
+import { AiOutlineAudit } from "react-icons/ai";
+import { GrTransaction, GrServices } from "react-icons/gr";
+
 export const dashboardRoute = {
   title: "Dashboard",
-  icon: <FaUser />,
+  icon: <IoHomeOutline />,
   path: "/dashboard",
 };
 
@@ -13,37 +38,37 @@ export const customerRoutes = [
   },
   {
     title: "Guarantors",
-    icon: <FaUser />,
+    icon: <FaUsers />,
     path: "",
   },
   {
     title: "Loans",
-    icon: <FaUser />,
+    icon: <GiMoneyStack />,
     path: "",
   },
   {
     title: "Decision Models",
-    icon: <FaUser />,
+    icon: <FaRegHandshake />,
     path: "",
   },
   {
     title: "Savings",
-    icon: <FaUser />,
+    icon: <FaPiggyBank />,
     path: "",
   },
   {
     title: "Loan requests",
-    icon: <FaUser />,
+    icon: <FaHandHoldingUsd />,
     path: "",
   },
   {
     title: "Whitelist",
-    icon: <FaUser />,
+    icon: <FaUserCheck />,
     path: "",
   },
   {
     title: "Karma",
-    icon: <FaUser />,
+    icon: <FaUserTimes />,
     path: "",
   },
 ];
@@ -51,47 +76,47 @@ export const customerRoutes = [
 export const businessesRoutes = [
   {
     title: "Organization",
-    icon: <FaUser />,
+    icon: <FaShoppingBag />,
     path: "",
   },
   {
     title: "Loan Products",
-    icon: <FaUser />,
+    icon: <GiReceiveMoney />,
     path: "",
   },
   {
     title: "Savings Products",
-    icon: <FaUser />,
+    icon: <RiBankLine />,
     path: "",
   },
   {
     title: "Fees and Charges",
-    icon: <FaUser />,
+    icon: <RiDatabase2Fill />,
     path: "",
   },
   {
     title: "Transactions",
-    icon: <FaUser />,
+    icon: <GrTransaction />,
     path: "",
   },
   {
     title: "Services",
-    icon: <FaUser />,
+    icon: <GrServices />,
     path: "",
   },
   {
     title: "Service Account",
-    icon: <FaUser />,
+    icon: <FaUserCog />,
     path: "",
   },
   {
     title: "Settlements",
-    icon: <FaUser />,
+    icon: <RiFilePaper2Line />,
     path: "",
   },
   {
     title: "Reports",
-    icon: <FaUser />,
+    icon: <FaChartBar />,
     path: "",
   },
 ];
@@ -99,23 +124,23 @@ export const businessesRoutes = [
 export const settingsRoutes = [
   {
     title: "Preferences",
-    icon: <FaUser />,
+    icon: <BiSlider />,
     path: "",
   },
   {
     title: "Fees and Pricing",
-    icon: <FaUser />,
+    icon: <RiPercentFill />,
     path: "",
   },
   {
     title: "Audit Logs",
-    icon: <FaUser />,
+    icon: <AiOutlineAudit />,
     path: "",
   },
 
   {
     title: "System Messages",
-    icon: <FaUser />,
+    icon: <FiAperture />,
     path: "",
   },
 ];
