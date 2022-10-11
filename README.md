@@ -10,7 +10,7 @@ You can preview a live demo of this application at [sanni-habib-lendsqr-fe-test.
 
 This project was creating using:
 
-- [React](https://github.com/facebook/create-react-app)
+- [React](https://reactjs.org/)
 - [Sass](https://sass-lang.com)
 - [Redux](https://redux.js.org/)
 - [AgGrid](https://www.ag-grid.com/)
@@ -22,7 +22,7 @@ design, responsiveness and functionalities have been provided by developer's des
 
 ### Responsiveness
 
-This application is also as responsive as it should and also provide functionalities for all illustrated ideas in the given design. I have used `mixins` in `Sass` to create templates for my media queries and adopted nested styling in `Sass` to avoid class naming confilcts. All screen sizes have also been taken account of.
+This application is also as responsive as it should and also provide functionalities for all illustrated ideas in the given design. I have used `mixin` in `Sass` to create templates for my media queries and adopted nested styling in `Sass` to avoid class naming confilcts. All screen sizes have also been taken account of.
 
 ### Functionality and Optimization
 
@@ -32,14 +32,14 @@ I have created this project by writing functional codes using efficient algorith
 
 This mock-up was created having a four pages:
 
-- [Login]() `/auth/login`
-- [Dashboard]() `/dashboard`
-- [Users]() `/users`
-- [User Details]() `/users/details`
+- [Login](#login) `/auth/login`
+- [Dashboard](#dashboard) `/dashboard`
+- [Users](#users) `/users`
+- [User Details](#user-details) `/users/details`
 
 ### Login
 
-This mock authentication page allows user to enter their email and password for authorization. The validation provided at the moment is to prevent empty fields, we may update this when the api rules are ready. It also uses a `useEffect` hook to prevent authenticated user from retrying. On successful login, user is navigated to the `intended location` if there is any and its default is to the dashbaord.
+This mock authentication page allows user to enter their email and password for authorization. The validation provided at the moment is to prevent empty fields, we may update this when the api rules are ready. It also uses a `useEffect` hook to prevent authenticated user from retrying. On successful login, user is navigated to the `intended location` if there is any and it defaults to the dashbaord.
 
 ### Dashboard
 
