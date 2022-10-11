@@ -2,7 +2,13 @@ import React, { lazy, Suspense, useEffect } from "react";
 import "./App.scss";
 import { QueryClientProvider } from "react-query";
 import { queryClient, AppSetup } from "./utils/appSetup";
-import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Outlet,
+  Navigate,
+} from "react-router-dom";
 import ProtectedPage from "./protected/ProtectedPage";
 import SharedLayout from "./protected/SharedLayout";
 import AppSuspenseSpinner from "./components/Loader/AppSuspenseSpinner";
@@ -38,7 +44,7 @@ const App = () => {
               }
             >
               {/* A landing page may respond to the index path / */}
-              <Route path="/" element={<Dashboard />} />
+              <Route path="/" element={<Navigate to="/dashboard" />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/users" element={<Users />} />
               <Route path="/users/details" element={<UserDetails />} />

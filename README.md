@@ -10,7 +10,7 @@ You can preview a live demo of this application at [sanni-habib-lendsqr-fe-test.
 
 This project was creating using:
 
-- [React](https://github.com/facebook/create-react-app)
+- [React](https://reactjs.org/)
 - [Sass](https://sass-lang.com)
 - [Redux](https://redux.js.org/)
 - [AgGrid](https://www.ag-grid.com/)
