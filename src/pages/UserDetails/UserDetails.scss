@@ -1,6 +1,7 @@
 @import '../../variables/variables.scss';
 
 .user-details-section {
+    position: relative;
 
     .user-details-main {
         .back-to-users {
@@ -164,4 +165,21 @@
             }
         }
     }
+
+    .refetching {
+        position: absolute;
+        right: 5px;
+        top: -5px;
+        display: flex;
+        align-items: center;
+    }
+}
+
+.unavailable {
+    background-color: #FFFFFF;
+    margin-top: 25px;
+    border: 1px solid rgba(33, 63, 125, 0.06);
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+    padding: 15px 25px;
 }

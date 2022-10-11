@@ -1,0 +1,27 @@
+.app-suspense-con {
+    width: 100%;
+    height: calc(100vh - 100px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+
+    .app-spinner-main {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin: 0 auto;
+        border: 5px solid #39CDCC;
+        border-top: 5px solid #0e8181;
+        animation: spin .5s linear infinite;
+    }
+
+    @keyframes spin {
+        0%{
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+}

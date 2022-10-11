@@ -1,0 +1,36 @@
+.form-input-con {
+    position: relative;
+
+    .form-input {
+        width: 100%;
+        background: #FFFFFF;
+        border: 2px solid rgba(84, 95, 125, 0.15);
+        border-radius: 5px;
+        padding: 12px 16px;
+        outline: none;
+
+        &.password {
+            padding-right: 50px;
+        }
+
+        &::placeholder {
+            color: rgba(84, 95, 125, 0.6)
+        }
+
+        &:focus {
+            border: 2px solid rgba(121, 145, 212, 0.15);
+        }
+    }
+
+    .toggle-show {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #39CDCC;
+        font-family: 'Avenir Next';
+        font-weight: 600;
+        font-size: 12px;
+        cursor: pointer;
+    }
+}

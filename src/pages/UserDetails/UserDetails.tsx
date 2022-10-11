@@ -4,22 +4,27 @@ import { AiOutlineStar, AiFillStar, AiOutlineUser } from "react-icons/ai";
 import { useNavigate, useLocation } from "react-router-dom";
 import { addUserDetails } from "../../redux/slice";
 import UserInfo from "../../components/UsersInfo/UsersInfo";
+import AppSuspenseSpinner from "../../components/Loader/AppSuspenseSpinner";
 import "./UserDetails.scss";
 import { useQuery } from "react-query";
 import useAppSelector from "../../hooks/useAppSelector";
 import { useDispatch } from "react-redux";
+import Spinner from "../../components/Loader/Spinner";
 
 const UserDetails = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { state } = useLocation();
   const [tab, setTab] = useState("general");
+  const [recent, setRecent] = useState(false);
   const { userDetails } = useAppSelector(({ user }) => user);
   const detail = userDetails?.find((item) => item.id === state?.id);
-  const { refetch } = useQuery(`users/${state?.id}`, {
+
+  const { refetch, isFetching } = useQuery(`users/${state?.id}`, {
     refetchOnWindowFocus: false,
     enabled: false,
     onSuccess: (data) => {
+      setRecent(true);
       dispatch(addUserDetails({ id: state?.id, data: data }));
     },
   });
@@ -31,12 +36,25 @@ const UserDetails = () => {
     }
   }, [userDetails]);
 
+  useEffect(() => {
+    if (userDetails && !recent) {
+      refetch();
+    }
+  }, [recent, userDetails]);
+
   return !state?.id ? (
-    <div>
+    <div className="unavailable">
       <h3>Data not available, try selecting a user</h3>
     </div>
   ) : detail ? (
     <section className="user-details-section">
+      {isFetching && (
+        <div className="refetching">
+          <span>updating..</span>
+          <Spinner />
+        </div>
+      )}
+
       <div className="user-details-main">
         <div className="back-to-users" onClick={() => navigate("/users")}>
           <CgArrowLongLeft />
@@ -142,36 +160,34 @@ const UserDetails = () => {
 
         {tab === "general" && <UserInfo detail={detail} />}
         {tab === "documents" && (
-          <div>
+          <div className="unavailable">
             <h3>Documents unavailable</h3>
           </div>
         )}
         {tab === "bank" && (
-          <div>
+          <div className="unavailable">
             <h3>Bank unavailable</h3>
           </div>
         )}
         {tab === "loans" && (
-          <div>
+          <div className="unavailable">
             <h3>Loans unavailable</h3>
           </div>
         )}
         {tab === "savings" && (
-          <div>
+          <div className="unavailable">
             <h3>Savings unavailable</h3>
           </div>
         )}
         {tab === "system" && (
-          <div>
+          <div className="unavailable">
             <h3>System unavailable</h3>
           </div>
         )}
       </div>
     </section>
   ) : (
-    <div>
-      <h3>Loading please wait</h3>
-    </div>
+    <AppSuspenseSpinner />
   );
 };
 

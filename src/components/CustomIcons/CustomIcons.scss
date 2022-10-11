@@ -42,3 +42,64 @@
         }
     }
 }
+
+.with-loan-custom-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #F55F44;
+    background-color: rgba(245, 95, 68,0.1);
+    border-radius: 50%;
+
+    & > div {
+        position: relative;
+
+        & > svg:first-child {
+            font-size: 24px;
+        }
+
+        & > svg:last-child {
+            position: absolute;
+            top: 40%;
+            left: 40%;
+        }
+    }
+}
+
+.with-saving-custom-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FF3366;
+    background-color: rgba(255, 51, 102,0.1);
+    border-radius: 50%;
+
+    & > div {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+
+        .data{
+            transform: translateX(5px);
+        }
+
+        .stack {
+            transform: translateX(-5px);
+            display: flex;
+            flex-direction: column-reverse;
+
+            & > svg:first-child {
+                transform: translateY(-8px);
+            }
+
+            & > svg:last-child {
+
+            }
+        }
+    }
+}

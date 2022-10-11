@@ -1,14 +1,15 @@
 import React, { useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import useAppSelector from "../hooks/useAppSelector";
 
 const ProtectedPage = ({ children }: { children: JSX.Element }) => {
   const location = useLocation();
   const navigate = useNavigate();
-  // temporary
-  const auth = true;
+  const { user } = useAppSelector(({ user }) => user);
+
   useEffect(() => {
-    !auth && navigate("/auth/login", { state: { prev: location.pathname } });
-  }, [auth]);
+    !user && navigate("/auth/login", { state: { prev: location.pathname } });
+  }, [user]);
 
   return children;
 };
