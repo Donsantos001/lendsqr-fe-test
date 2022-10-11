@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback } from "react";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import RowCount from "../UsersTable/RowCount";
 import "./PaginationControls.scss";
@@ -41,7 +41,7 @@ const PaginationControls = ({
     if (end < pages - 1) pagesShown.push({ value: "...", active: false });
     pagesShown.push({ value: pages, active: current === pages });
     return pagesShown;
-  }, [pages, current, rows]);
+  }, [pages, current]);
 
   return (
     <div className="pagination-controls-con">

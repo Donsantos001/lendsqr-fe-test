@@ -34,13 +34,13 @@ const UserDetails = () => {
     if (!userDetails.some((item) => item.id === state?.id)) {
       refetch();
     }
-  }, [userDetails]);
+  }, [userDetails, state?.id, refetch]);
 
   useEffect(() => {
     if (userDetails && !recent) {
       refetch();
     }
-  }, [recent, userDetails]);
+  }, [recent, userDetails, refetch]);
 
   return !state?.id ? (
     <div className="unavailable">
