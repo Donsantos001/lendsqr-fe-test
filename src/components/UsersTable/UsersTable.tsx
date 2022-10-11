@@ -167,6 +167,7 @@ const UsersTable = ({
     onPaginationChanged();
   };
 
+  console.log(controlInfo);
   return (
     <React.Fragment>
       <div className="users-table">
@@ -179,8 +180,8 @@ const UsersTable = ({
               setOpenOptions(true);
             },
           }}
-          gridApi={(api: any) => (gridApi = api)}
-          onGridReady={() => {
+          onRowDataUpdated={(params) => {
+            gridApi = params.api;
             setControlInfo(paginationInfo());
           }}
           pagination={true}
