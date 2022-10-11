@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback } from "react";
+import React, { useState, useCallback } from "react";
 import { useQuery } from "react-query";
 import Table from "../Table/Table";
 import "./UsersTable.scss";
@@ -10,6 +10,7 @@ import PaginationControls from "../Pagination/PaginationControls";
 import { randomStatus } from "../../utils/status";
 import UserFilter from "../Filter/UserFilter";
 
+let gridApi: any;
 const filterInitState = {
   orgName: "",
   userName: "",
@@ -26,7 +27,6 @@ const UsersTable = ({
   openDetails: (id: number) => void;
   showFilter?: boolean;
 }) => {
-  const gridRef = useRef<any>();
   const [openOptions, setOpenOptions] = useState(false);
   const [clickedId, setClickedId] = useState(0);
   const [filterDetails, setFilterDetails] = useState(filterInitState);
@@ -109,10 +109,12 @@ const UsersTable = ({
   const onReset = () => {
     setFilterDetails(filterInitState);
     setData(userData);
+    onPaginationChanged();
   };
 
   const onFilter = () => {
     setData(getFilteredData());
+    onPaginationChanged();
   };
 
   // This just populates a random status for design purpose
@@ -124,11 +126,11 @@ const UsersTable = ({
   }, [data]);
 
   const paginationInfo = () => {
-    if (gridRef.current && gridRef.current?.api) {
+    if (gridApi) {
       return {
-        pages: gridRef.current.api.paginationGetTotalPages(),
-        current: gridRef.current.api.paginationGetCurrentPage() + 1,
-        rows: gridRef.current.api.paginationGetPageSize(),
+        pages: gridApi.paginationGetTotalPages(),
+        current: gridApi.paginationGetCurrentPage() + 1,
+        rows: gridApi.paginationGetPageSize(),
       };
     }
     return {
@@ -138,35 +140,37 @@ const UsersTable = ({
     };
   };
 
-  const [controlInfo, setControlInfo] = useState(paginationInfo());
+  const [controlInfo, setControlInfo] = useState({
+    pages: 1,
+    current: 1,
+    rows: 0,
+  });
 
   const onPaginationChanged = () => {
-    if (gridRef.current) {
-      //avoid unneccessary callbacks
-      const info = paginationInfo();
-      if (JSON.stringify(info) === JSON.stringify(controlInfo)) return;
-      setControlInfo(info);
-    }
+    setControlInfo(paginationInfo());
   };
 
   const setPageSize = (param: number) => {
-    gridRef.current.api.paginationSetPageSize(param);
+    gridApi.paginationSetPageSize(param);
+    onPaginationChanged();
   };
   const toNextPage = () => {
-    gridRef.current.api.paginationGoToNextPage();
+    gridApi.paginationGoToNextPage();
+    onPaginationChanged();
   };
   const toPrevPage = () => {
-    gridRef.current.api.paginationGoToPreviousPage();
+    gridApi.paginationGoToPreviousPage();
+    onPaginationChanged();
   };
   const toPage = (param: number) => {
-    gridRef.current.api.paginationGoToPage(param);
+    gridApi.paginationGoToPage(param);
+    onPaginationChanged();
   };
 
   return (
     <React.Fragment>
       <div className="users-table">
         <Table
-          gridRef={gridRef}
           rowData={getWithStatus()}
           columnDefs={columnDefs}
           context={{
@@ -175,9 +179,12 @@ const UsersTable = ({
               setOpenOptions(true);
             },
           }}
+          onRowDataUpdated={(params) => {
+            gridApi = params.api;
+            setControlInfo(paginationInfo());
+          }}
           pagination={true}
           paginationPageSize={10}
-          onPaginationChanged={onPaginationChanged}
         />
 
         {clickedId !== 0 && openOptions && (
@@ -203,7 +210,7 @@ const UsersTable = ({
         )}
       </div>
 
-      {gridRef.current && (
+      {gridApi && (
         <PaginationControls
           {...controlInfo}
           setPageSize={setPageSize}

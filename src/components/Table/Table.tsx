@@ -11,6 +11,7 @@ LicenseManager.prototype.outputMissingLicenseKey = () => {};
 
 type Props = {
   gridRef?: any;
+  onGridReady?: (e: any) => void;
   rowData?: any[] | null;
   columnDefs: (ColDef | ColGroupDef)[] | null;
   height?: string | number;
@@ -19,6 +20,7 @@ type Props = {
 
 const Table = ({
   gridRef,
+  onGridReady,
   ...props
 }: Omit<GridOptions, "rowData" | "columnDefs"> & Props) => {
   const defaultColDefs = {
@@ -44,6 +46,9 @@ const Table = ({
         paginationPageSize={props.paginationPageSize}
         onPaginationChanged={props.onPaginationChanged}
         suppressPaginationPanel={true}
+        onGridReady={(params: any) => {
+          onGridReady && onGridReady(params);
+        }}
         defaultColDef={
           props.defaultColDef
             ? { ...defaultColDefs, ...props.defaultColDef }
