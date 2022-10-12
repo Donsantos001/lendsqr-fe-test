@@ -17,7 +17,7 @@ This project was creating using:
 
 ## Overview
 
-This application UI has been created based on the provided `figma`
+This application UI has four pages and has been created based on the provided `figma`
 design, responsiveness and functionalities have been provided by developer's descretion. I have also applied some logics for better app optimization and provided suitable messages in error cases.
 
 ### Responsiveness
@@ -47,13 +47,13 @@ This pages contains a section for an overall overview of users data in cards, an
 
 ### Users
 
-This page contains everything just like the dashoard but with an open filter modal which allows user to filter user data by searching with parameter for individual columns.
+This page contains everything just like the dashoard but with an open `filter modal` which allows user to filter user data by searching with parameter for individual columns.
 The user status was also appended to the response data at random for design representation
 
 ### User Details
 
 A page that renders the users full information and allows for account settings management. It uses the `ID` property of the selected user in the user details page to fetch users data.
-I have used `localStorage` to implement caching for this page. Here when the selected user data is present in the `localStorage`, the page is rendered with this data, and then the data is updated afterward in background with a loader to indicate this proccess to the user.
+I have used `localStorage` to implement `caching` for this page. Here when the selected user data is present in the `localStorage`, the page is rendered with this data, and then the data is updated afterward in background with a loader to indicate this proccess to the user.
 
 ## Component and Features
 
@@ -69,5 +69,5 @@ Here are some of the reusable components features that have been created/modifie
 
 ## Probable Future Changes
 
-If there there was room to add to app design, I would have a button on the table components that will optionally toggle the custom filters modal that has been created.
+If there there was room to add to application design, I would have a button on the table components that will optionally toggle the custom filters modal that has been created. I would have included the caching technique on the dashoard and users page also.
 It there was also a status field associated with the user data received from the `API`, It would have been better and would improve the app performance.
