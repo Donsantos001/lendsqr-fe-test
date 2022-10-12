@@ -39,37 +39,37 @@ export const customerRoutes = [
   {
     title: "Guarantors",
     icon: <FaUsers />,
-    path: "/pagenotfound",
+    path: "",
   },
   {
     title: "Loans",
     icon: <GiMoneyStack />,
-    path: "/pagenotfound",
+    path: "",
   },
   {
     title: "Decision Models",
     icon: <FaRegHandshake />,
-    path: "/pagenotfound",
+    path: "",
   },
   {
     title: "Savings",
     icon: <FaPiggyBank />,
-    path: "/pagenotfound",
+    path: "",
   },
   {
     title: "Loan requests",
     icon: <FaHandHoldingUsd />,
-    path: "/pagenotfound",
+    path: "",
   },
   {
     title: "Whitelist",
     icon: <FaUserCheck />,
-    path: "/pagenotfound",
+    path: "",
   },
   {
     title: "Karma",
     icon: <FaUserTimes />,
-    path: "/pagenotfound",
+    path: "",
   },
 ];
 
@@ -77,47 +77,47 @@ export const businessesRoutes = [
   {
     title: "Organization",
     icon: <FaShoppingBag />,
-    path: "/pagenotfound",
+    path: "",
   },
   {
     title: "Loan Products",
     icon: <GiReceiveMoney />,
-    path: "/pagenotfound",
+    path: "",
   },
   {
     title: "Savings Products",
     icon: <RiBankLine />,
-    path: "/pagenotfound",
+    path: "",
   },
   {
     title: "Fees and Charges",
     icon: <RiDatabase2Fill />,
-    path: "/pagenotfound",
+    path: "",
   },
   {
     title: "Transactions",
     icon: <GrTransaction />,
-    path: "/pagenotfound",
+    path: "",
   },
   {
     title: "Services",
     icon: <GrServices />,
-    path: "/pagenotfound",
+    path: "",
   },
   {
     title: "Service Account",
     icon: <FaUserCog />,
-    path: "/pagenotfound",
+    path: "",
   },
   {
     title: "Settlements",
     icon: <RiFilePaper2Line />,
-    path: "/pagenotfound",
+    path: "",
   },
   {
     title: "Reports",
     icon: <FaChartBar />,
-    path: "/pagenotfound",
+    path: "",
   },
 ];
 
@@ -125,22 +125,22 @@ export const settingsRoutes = [
   {
     title: "Preferences",
     icon: <BiSlider />,
-    path: "/pagenotfound",
+    path: "",
   },
   {
     title: "Fees and Pricing",
     icon: <RiPercentFill />,
-    path: "/pagenotfound",
+    path: "",
   },
   {
     title: "Audit Logs",
     icon: <AiOutlineAudit />,
-    path: "/pagenotfound",
+    path: "",
   },
 
   {
     title: "System Messages",
     icon: <FiAperture />,
-    path: "/pagenotfound",
+    path: "",
   },
 ];
