@@ -39,37 +39,37 @@ export const customerRoutes = [
   {
     title: "Guarantors",
     icon: <FaUsers />,
-    path: "#",
+    path: "/pagenotfound",
   },
   {
     title: "Loans",
     icon: <GiMoneyStack />,
-    path: "#",
+    path: "/pagenotfound",
   },
   {
     title: "Decision Models",
     icon: <FaRegHandshake />,
-    path: "#",
+    path: "/pagenotfound",
   },
   {
     title: "Savings",
     icon: <FaPiggyBank />,
-    path: "#",
+    path: "/pagenotfound",
   },
   {
     title: "Loan requests",
     icon: <FaHandHoldingUsd />,
-    path: "#",
+    path: "/pagenotfound",
   },
   {
     title: "Whitelist",
     icon: <FaUserCheck />,
-    path: "#",
+    path: "/pagenotfound",
   },
   {
     title: "Karma",
     icon: <FaUserTimes />,
-    path: "#",
+    path: "/pagenotfound",
   },
 ];
 
@@ -77,47 +77,47 @@ export const businessesRoutes = [
   {
     title: "Organization",
     icon: <FaShoppingBag />,
-    path: "#",
+    path: "/pagenotfound",
   },
   {
     title: "Loan Products",
     icon: <GiReceiveMoney />,
-    path: "#",
+    path: "/pagenotfound",
   },
   {
     title: "Savings Products",
     icon: <RiBankLine />,
-    path: "#",
+    path: "/pagenotfound",
   },
   {
     title: "Fees and Charges",
     icon: <RiDatabase2Fill />,
-    path: "#",
+    path: "/pagenotfound",
   },
   {
     title: "Transactions",
     icon: <GrTransaction />,
-    path: "#",
+    path: "/pagenotfound",
   },
   {
     title: "Services",
     icon: <GrServices />,
-    path: "#",
+    path: "/pagenotfound",
   },
   {
     title: "Service Account",
     icon: <FaUserCog />,
-    path: "#",
+    path: "/pagenotfound",
   },
   {
     title: "Settlements",
     icon: <RiFilePaper2Line />,
-    path: "#",
+    path: "/pagenotfound",
   },
   {
     title: "Reports",
     icon: <FaChartBar />,
-    path: "#",
+    path: "/pagenotfound",
   },
 ];
 
@@ -125,22 +125,22 @@ export const settingsRoutes = [
   {
     title: "Preferences",
     icon: <BiSlider />,
-    path: "#",
+    path: "/pagenotfound",
   },
   {
     title: "Fees and Pricing",
     icon: <RiPercentFill />,
-    path: "#",
+    path: "/pagenotfound",
   },
   {
     title: "Audit Logs",
     icon: <AiOutlineAudit />,
-    path: "#",
+    path: "/pagenotfound",
   },
 
   {
     title: "System Messages",
     icon: <FiAperture />,
-    path: "#",
+    path: "/pagenotfound",
   },
 ];
